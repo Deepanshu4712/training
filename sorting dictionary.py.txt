@@ -1,0 +1,10 @@
+'' 'ascending order' ''
+dic ={1: 6, 2: 5, 3:7}
+
+sortdic = sorted (dic.values ())
+print (sortdic)
+'' 'decending order' '' 
+dic ={1: 6, 2: 5, 3:7}
+
+descendingdic = sorted (dic.values (), reverse = True) 
+print (descendingdic)

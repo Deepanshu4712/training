@@ -1,0 +1,135 @@
+str = '''show itd SER1
+Legend:
+ ST(Status): ST-Standby,LF-Link Failed,PF-Probe Failed,PD-Peer Down,IA-Inactive
+
+Name           LB Scheme  Status   Buckets
+-------------- ---------- -------- -------
+SER1           src-ip     ACTIVE   8      
+
+Exclude ACL
+-------------------------------
+                                 
+
+Device Group                                       Probe  Port
+-------------------------------------------------- ----- ------
+DG1                                                 ICMP       
+
+Pool                           Interface    Status Track_id 
+------------------------------ ------------ ------ ---------
+SER1_itd_pool                  Vlan67       UP       1      
+
+
+  Node  IP                                     Cfg-S  WGT
+  ------------------------------------------- ------- ---
+  1                                 10:1::1:2  Active   1
+
+                                    Probe Port    Probe-IP    STS Trk# Sla_id
+                                    ---- ----- --------------- -- --- -------
+                                    ICMP                       PF   2   10002
+
+      Bucket List
+      --------------------------------------------------------------------------
+      SER1_itd_bucket_1
+
+  Node  IP                                     Cfg-S  WGT
+  ------------------------------------------- ------- ---
+  2                                 11:1::1:2  Active   1
+
+                                    Probe Port    Probe-IP    STS Trk# Sla_id
+                                    ---- ----- --------------- -- --- -------
+                                    ICMP                       OK   3   10003
+
+      Bucket List
+      --------------------------------------------------------------------------
+      SER1_itd_bucket_2
+
+  Node  IP                                     Cfg-S  WGT
+  ------------------------------------------- ------- ---
+  3                                 12:1::1:2  Active   1
+
+                                    Probe Port    Probe-IP    STS Trk# Sla_id
+                                    ---- ----- --------------- -- --- -------
+                                    ICMP                       OK   4   10004
+
+      Bucket List
+      --------------------------------------------------------------------------
+      SER1_itd_bucket_3
+
+  Node  IP                                     Cfg-S  WGT
+  ------------------------------------------- ------- ---
+  4                                 13:1::1:2  Active   1
+
+                                    Probe Port    Probe-IP    STS Trk# Sla_id
+                                    ---- ----- --------------- -- --- -------
+                                    ICMP                       OK   5   10005
+
+      Bucket List
+      --------------------------------------------------------------------------
+      SER1_itd_bucket_4
+
+  Node  IP                                     Cfg-S  WGT
+  ------------------------------------------- ------- ---
+  5                                 14:1::1:2  Active   1
+
+                                    Probe Port    Probe-IP    STS Trk# Sla_id
+                                    ---- ----- --------------- -- --- -------
+                                    ICMP                       OK   6   10006
+
+      Bucket List
+      --------------------------------------------------------------------------
+      SER1_itd_bucket_5
+
+  Node  IP                                     Cfg-S  WGT
+  ------------------------------------------- ------- ---
+  6                                 15:1::1:2  Active   1
+
+                                    Probe Port    Probe-IP    STS Trk# Sla_id
+                                    ---- ----- --------------- -- --- -------
+                                    ICMP                       OK   7   10007
+
+      Bucket List
+      --------------------------------------------------------------------------
+      SER1_itd_bucket_6
+
+  Node  IP                                     Cfg-S  WGT
+  ------------------------------------------- ------- ---
+  7                                 16:1::1:2  Active   1
+
+                                    Probe Port    Probe-IP    STS Trk# Sla_id
+                                    ---- ----- --------------- -- --- -------
+                                    ICMP                       OK   8   10008
+
+      Bucket List
+      --------------------------------------------------------------------------
+      SER1_itd_bucket_7
+
+  Node  IP                                     Cfg-S  WGT
+  ------------------------------------------- ------- ---
+  8                                 17:1::1:2  Active   1
+
+                                    Probe Port    Probe-IP    STS Trk# Sla_id
+                                    ---- ----- --------------- -- --- -------
+                                    ICMP                       OK   9   10009
+
+      Bucket List
+      --------------------------------------------------------------------------
+      SER1_itd_bucket_8'''
+l=str.split()
+
+
+alp = []
+num = []
+special = []
+for i in l:
+    if (i.isdigit()):
+       num.append(i)
+    elif(i.isalpha()): 
+       alp.append(i)
+    else:
+       special.append(i)
+print("words")
+print(alp) 
+print("numbers")
+print(num) 
+print("others")
+print(special)
