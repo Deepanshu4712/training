@@ -16,9 +16,7 @@ print('\n')
 def threadSleep():
     sleepTime = job_queue.get()
     print("I'm Thread-{}. I'm sleeping for {} seconds".format(threading.current_thread().getName(), sleepTime ))
-    # print(threading.current_thread().getName() + 'on sleep ON')
     time.sleep(sleepTime)
-    # print(threading.current_thread().getName() + 'sleep OFF')
     threads_queue.put(threading.Thread(name=threading.current_thread().getName(), target=threadSleep))
 
 
